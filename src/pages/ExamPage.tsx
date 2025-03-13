@@ -67,14 +67,14 @@ const ExamPage = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-[#1A1F2C] text-white">
       <Header />
       
-      <div className="p-4 border-b bg-white sticky top-16 z-40">
+      <div className="p-4 border-b border-gray-800 bg-[#161A25] sticky top-16 z-40 shadow-md">
         <div className="flex justify-between items-center max-w-4xl mx-auto">
           <div className="flex gap-2 items-center">
             <Progress value={progress} className="w-32 h-2" />
-            <span className="text-sm text-muted-foreground">
+            <span className="text-sm text-gray-400">
               {currentQuestionIndex + 1}/{examQuestions.length}
             </span>
           </div>
@@ -83,15 +83,15 @@ const ExamPage = () => {
             <Button 
               variant="ghost" 
               size="sm" 
-              className="md:hidden"
+              className="md:hidden text-gray-300 hover:text-white hover:bg-[#2A3042]"
               onClick={() => setShowMobileCam(!showMobileCam)}
             >
               {showMobileCam ? "Hide Camera" : "Show Camera"}
             </Button>
             
             <div className="flex items-center gap-2 text-sm font-medium">
-              <Clock size={16} className={timeLeft < 300 ? "text-red-500" : ""} />
-              <span className={timeLeft < 300 ? "text-red-500" : ""}>
+              <Clock size={16} className={timeLeft < 300 ? "text-red-500" : "text-gray-300"} />
+              <span className={timeLeft < 300 ? "text-red-500" : "text-gray-300"}>
                 {formatTime(timeLeft)}
               </span>
             </div>
@@ -101,15 +101,15 @@ const ExamPage = () => {
       
       {showMobileCam && (
         <div className="p-4 md:hidden">
-          <CameraFeed className="h-32" />
+          <CameraFeed className="h-32 rounded-lg border-2 border-gray-700 shadow-lg" />
         </div>
       )}
       
       <main className="flex-1 p-4 max-w-4xl mx-auto w-full">
         {timeLeft < 300 && (
-          <Card className="p-3 mb-4 bg-red-50 border-red-200 flex items-center gap-3">
+          <Card className="p-3 mb-4 bg-red-900/20 border-red-800 flex items-center gap-3">
             <AlertTriangle size={16} className="text-red-500" />
-            <p className="text-sm text-red-700">You have less than 5 minutes remaining!</p>
+            <p className="text-sm text-red-400">You have less than 5 minutes remaining!</p>
           </Card>
         )}
         
@@ -121,7 +121,7 @@ const ExamPage = () => {
           isFirst={currentQuestionIndex === 0}
         />
         
-        <div className="mt-6 text-center text-xs text-muted-foreground">
+        <div className="mt-6 text-center text-xs text-gray-500">
           Dragon Proctor System • Exam Session #{Math.floor(Math.random() * 10000)}
         </div>
       </main>
