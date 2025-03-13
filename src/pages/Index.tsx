@@ -47,8 +47,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#1A1F2C] text-white">
-      <header className="border-b border-gray-800 p-4 bg-black/20 backdrop-blur-sm">
-        <h1 className="font-super-comic text-4xl text-[#f3f91c] drop-shadow-[0_2px_8px_rgba(255,255,0,0.6)]">Dragon</h1>
+      <header className="border-b border-gray-800 p-6 bg-black/20 backdrop-blur-sm flex justify-center items-center">
+        <h1 className="font-super-comic text-5xl text-[#f3f91c] drop-shadow-[0_2px_8px_rgba(255,255,0,0.6)]">Dragon</h1>
       </header>
       
       <main className="flex-1 flex flex-col md:flex-row">
